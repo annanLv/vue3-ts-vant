@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# vue-ts-vant-template
-
-vue3+ts的h5模板
-=======
 # Vue 3 + TypeScript + Vite
 
 该模板将帮助您开始在`Vite`中使用`Vue3` 和 `TypeScript`进行开发。
@@ -54,4 +49,3 @@ npm run build:deve
 ## lodash
 
 项目中引入了 `lodash` 工具库，在目录 `@/utils/lodash` 中可以看到，目前提供了 `节流` 和 `防抖` 供直接使用。
->>>>>>> 927e477 ('feat(all):init')
