@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, {AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios';
 import { Toast } from 'vant';
 import { loading } from '@/hooks';
 import { getHrefParams } from '@/utils';
@@ -22,15 +22,17 @@ service.interceptors.request.use(
     console.log(error);
   }
 );
-interface Info {
+interface Info<T = any> {
+  code: number,
   msg: string,
-  message: string
+  message: string,
+  data: T
 }
 function toastInfo(res: Partial<Info>) {
   return res.msg || res.message || '请求失败';
 }
 service.interceptors.response.use(
-  response => {
+  (response: AxiosResponse): Promise<Info> => {
     loading.value = false;
     const res = response.data;
     if (res.code !== 200) {
