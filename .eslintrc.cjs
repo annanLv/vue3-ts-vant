@@ -48,7 +48,7 @@ module.exports = {
     "vue/no-multi-spaces": [0, {
       "ignoreProperties": false
     }],
-    "vue/html-self-closing": ["error", {
+    "vue/html-self-closing": [0, {
       "html": {
         "void": "always",
         "normal": "always",
