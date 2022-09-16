@@ -57,9 +57,9 @@ export function sendMessage(type: CLINET_COMMAND, params = {}) {
 }
 /**
  * 版本比较
- * @param ver1 
- * @param ver2 
- * @returns 
+ * @param ver1
+ * @param ver2
+ * @returns
  */
 export function versionfunegt(ver1: string, ver2: string): boolean {
   const version1pre = parseFloat(ver1);
@@ -77,4 +77,15 @@ export function versionfunegt(ver1: string, ver2: string): boolean {
       return false;
     }
   }
+}
+
+
+/**
+ * getAssetsFile
+ * @desc 获取静态资源地址
+ * @param dir 文件夹名称
+ * @param url 文件名
+ */
+export function getAssetsFile(dir: string, url: string): string {
+  return new URL(`../assets/${ dir }/${ url }`, import.meta.url).href;
 }
