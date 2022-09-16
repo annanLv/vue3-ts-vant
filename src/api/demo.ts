@@ -2,10 +2,10 @@ import request from '@/utils/request';
 import { AxiosResponse } from 'axios';
 
 type Result<T> = {
-  result: T,
-  arr: string[],
-  list: string[],
-  total: number
+  code?: number,
+  message?: string,
+  msg?: string,
+  data?: T
 }
 
 

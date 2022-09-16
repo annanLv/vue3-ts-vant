@@ -1,11 +1,12 @@
-# Vue 3 + TypeScript + Vite
+# 杭州天渺科技
+## Vue 3 + TypeScript + Vite
 
 该模板将帮助您开始在`Vite`中使用`Vue3` 和 `TypeScript`进行开发。
 
 
 ```bash
 # 克隆项目
-git clone https://github.com/mao-118/vue-ts-vant-template.git
+git clone http://tm-coderepos.tianmcloud.com/maolihang/vue-ts-vant-template.git
 
 #安装依赖
 npm install
