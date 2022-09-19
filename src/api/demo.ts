@@ -1,12 +1,7 @@
 import request from '@/utils/request';
 import { AxiosResponse } from 'axios';
 
-type Result<T> = {
-  code?: number,
-  message?: string,
-  msg?: string,
-  data?: T
-}
+import { Result } from '@/utils/types';
 
 
 export function getListApi<T = any>(): Promise<AxiosResponse<Result<T>>> {

@@ -12,3 +12,11 @@ export enum CLINET_COMMAND {
   GOWELFARECENTER = 'goWelfareCenter',
   RECHARGE = 'reCharge'
 }
+
+
+export type Result<T> = {
+  code?: number,
+  message?: string,
+  msg?: string,
+  data?: T
+}
