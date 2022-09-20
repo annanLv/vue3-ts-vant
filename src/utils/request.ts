@@ -1,7 +1,8 @@
-import axios, {AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { Toast } from 'vant';
 import { loading } from '@/hooks';
 import { getHrefParams } from '@/utils';
+import { Result } from '@/utils/types';
 
 const service: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -22,17 +23,12 @@ service.interceptors.request.use(
     console.log(error);
   }
 );
-interface Info<T = any> {
-  code: number,
-  msg: string,
-  message: string,
-  data: T
-}
-function toastInfo(res: Partial<Info>) {
+
+function toastInfo(res: Partial<Result>) {
   return res.msg || res.message || '请求失败';
 }
 service.interceptors.response.use(
-  (response: AxiosResponse): Promise<Info> => {
+  (response: AxiosResponse): Promise<Result> => {
     loading.value = false;
     const res = response.data;
     if (res.code !== 200) {

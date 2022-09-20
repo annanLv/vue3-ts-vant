@@ -14,9 +14,9 @@ export enum CLINET_COMMAND {
 }
 
 
-export type Result<T> = {
+export type Result<D = any> = {
   code?: number,
   message?: string,
   msg?: string,
-  data?: T
+  data?: D
 }

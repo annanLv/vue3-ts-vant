@@ -2,13 +2,13 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import autoprefixer from 'autoprefixer';
-import PostcssPxToViewport from 'postcss-px-to-viewport'; //自适应
+import PostcssPxToViewport from 'postcss-px-to-viewport';
 import Components from 'unplugin-vue-components/vite';
-import { VantResolver } from 'unplugin-vue-components/resolvers'; //vant自动导入
-import vueSetupExtend from 'vite-plugin-vue-setup-extend'; //setup支持name
-import AutoImport from 'unplugin-auto-import/vite'; //自动导入组合api
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import AutoImport from 'unplugin-auto-import/vite';
 import legacy from '@vitejs/plugin-legacy';
-// https://vitejs.dev/config/
+
 export default defineConfig({
   root: './',
   base: './',
@@ -19,7 +19,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    AutoImport({ //https://github.com/antfu/unplugin-auto-import
+    AutoImport({
       dts: true,
       imports: ['vue', 'vue-router'],
       eslintrc: {
@@ -27,7 +27,7 @@ export default defineConfig({
       }
     }),
     vueSetupExtend(),
-    Components({ //https://github.com/antfu/unplugin-vue-components
+    Components({
       resolvers: [VantResolver()]
     }),
     // 解决较老手机浏览器白屏的问题
