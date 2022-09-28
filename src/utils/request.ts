@@ -33,7 +33,7 @@ service.interceptors.response.use(
     const res = response.data;
     if (res.code !== 200) {
       Toast.fail(toastInfo(res));
-      return Promise.reject(new Error(toastInfo(res)));
+      return Promise.reject(res);
     }
     return Promise.resolve(res);
   },
