@@ -3,7 +3,7 @@ name: Build and Deploy
 on: # 事件
   push:
     branches:
-      - mian #推送到远程分支main之后触发
+      - main #推送到远程分支main之后触发
 jobs: # 任务
   build:
     runs-on: ubuntu-latest
