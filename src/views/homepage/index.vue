@@ -12,9 +12,6 @@
 </template>
 <script lang="ts" setup>
 
-import {PartialByKeys, Simplify} from '@/utils/typeMethod';
-
-
 type User = {
   id: number,
   name: string,
